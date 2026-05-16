@@ -1,0 +1,65 @@
+body {
+  font: 100%/1.5 system-ui, sans-serif;
+  display: flex;
+  flex-flow: column;
+  max-width: 80em;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: auto;
+  padding: 1em;
+}
+
+header {
+    display: flex;
+    gap: 1em;
+    align-items: baseline;
+}
+
+header label {
+    margin-left: auto;
+}
+
+time,
+em {
+    display: block;
+}
+
+em {
+    color: gray;
+    font-style: italic;
+}
+
+#time-slider {
+    width: 300px;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-block: 1rem;
+}
+
+.legend > div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    --color-departures: steelblue;
+    --color-arrivals: darkorange;
+
+    --color: color-mix(
+        in oklch,
+        var(--color-departures)
+            calc(100% * var(--departure-ratio)),
+        var(--color-arrivals)
+    );
+}
+
+.legend > div::before {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: var(--color);
+}
