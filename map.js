@@ -160,7 +160,6 @@ map.on('load', async () => {
             .enter()
             .append('circle')
             .attr('r', (d) => radiusScale(d.totalTraffic))
-            .attr('fill', 'steelblue')
             .attr('stroke', 'white')
             .attr('stroke-width', 1)
             .attr('fill-opacity', 0.6)
